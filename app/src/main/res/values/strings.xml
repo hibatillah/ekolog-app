@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">EkologApp</string>
+    <string name="tagline">Lestarikan Alam!</string>
+    <string name="explore">Ayo Jelajahi!</string>
+
+    <string name="blog">Blog</string>
+    <string name="topik">Topik Blog</string>
+    <string name="blogPribadi">Blog kamu</string>
+    <string name="tersimpan">Tersimpan</string>
+    <string name="profil">Profil</string>
+    <string name="editProfil">Edit Profil</string>
+
+    <string name="username">Username</string>
+    <string name="gender">Gender</string>
+    <string name="email">Email</string>
+    <string name="pass">Password</string>
+
+    <string name="judulBlog">Judul Blog</string>
+    <string name="gambarBlog">Gambar Blog</string>
+    <string name="labelBlog">Label Blog</string>
+    <string name="kontenBlog">Konten Blog</string>
+</resources>
