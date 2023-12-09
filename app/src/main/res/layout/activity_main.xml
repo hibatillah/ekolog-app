@@ -27,6 +27,7 @@
 
 <!--    navbar:start -->
     <include
+        android:id="@+id/navbar"
         layout="@layout/comp_navbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

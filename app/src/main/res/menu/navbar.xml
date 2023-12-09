@@ -5,26 +5,23 @@
         android:icon="@drawable/ic_home"
         android:title="@string/halaman_home"
         android:contentDescription="@string/halaman_home"
-        app:showAsAction="ifRoom"/>
-
+        />
     <item
         android:id="@+id/tab_create"
         android:icon="@drawable/ic_create"
         android:title="@string/halaman_create"
         android:contentDescription="@string/halaman_create"
-        app:showAsAction="ifRoom"/>
-
+        />
     <item
         android:id="@+id/tab_laporan"
         android:icon="@drawable/ic_laporan"
         android:title="@string/halaman_laporan"
         android:contentDescription="@string/halaman_laporan"
-        app:showAsAction="ifRoom"/>
-
+        />
     <item
         android:id="@+id/tab_profil"
         android:icon="@drawable/ic_profil"
         android:title="@string/halaman_profil"
         android:contentDescription="@string/halaman_profil"
-        app:showAsAction="ifRoom"/>
+        />
 </menu>

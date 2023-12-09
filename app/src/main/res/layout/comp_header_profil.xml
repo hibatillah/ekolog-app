@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="20dp"
+    android:paddingBottom="24dp"
+    android:paddingTop="40dp"
+    android:elevation="30dp"
+    android:background="@color/primary4">
+
+<!--    profile picture:start-->
+    <LinearLayout
+        android:id="@+id/profile_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        
+        <ImageView
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:padding="2dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/bg_tab_indicator"
+            android:src="@drawable/ic_launcher_foreground"
+            />
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_nama"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="2dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/bg_tab_icon">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 Blog"
+                    android:textColor="@color/secondary3"
+                    android:fontFamily="sans-serif-medium"
+                />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+<!--    profile picturee:end -->
+
+<!--    edit btn:start -->
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/primary3"
+        app:cornerRadius="8dp"
+        android:text="@string/masuk"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-medium"
+        android:letterSpacing="0.02"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_picture"
+        />
+<!--    edit btn:end -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
