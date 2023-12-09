@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EkologApp</string>
+    <string name="app_name">Ekolog App</string>
     <string name="tagline">Lestarikan Alam!</string>
     <string name="explore">Ayo Jelajahi!</string>
 
@@ -9,14 +9,31 @@
     <string name="tersimpan">Tersimpan</string>
     <string name="profil">Profil</string>
     <string name="editProfil">Edit Profil</string>
+    <string name="daftar">Daftar</string>
+    <string name="masuk">Masuk</string>
+
+    <string name="onboard">
+        Mari lestarikan lingkungan alam, dengan berbagi ilmu, dimulai dari Anda!
+    </string>
+    <string name="udah_akun">Sudah punya akun?</string>
+    <string name="belum_akun">Belum punya akun?</string>
+
+    <string name="halaman_home">Home</string>
+    <string name="halaman_create">Create</string>
+    <string name="halaman_laporan">Laporan</string>
+    <string name="halaman_profil">Profil</string>
 
     <string name="username">Username</string>
-    <string name="gender">Gender</string>
+    <string name="back_username">Masukkan username</string>
     <string name="email">Email</string>
+    <string name="back_email">Masukkan email</string>
     <string name="pass">Password</string>
+    <string name="back_pass">Masukkan Password</string>
 
     <string name="judulBlog">Judul Blog</string>
     <string name="gambarBlog">Gambar Blog</string>
     <string name="labelBlog">Label Blog</string>
     <string name="kontenBlog">Konten Blog</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
