@@ -4,10 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingHorizontal="20dp"
-    android:paddingBottom="24dp"
-    android:paddingTop="40dp"
-    android:elevation="30dp"
-    android:background="@color/primary4">
+    android:paddingTop="24dp"
+    android:elevation="20dp"
+    android:background="@drawable/bg_tab">
 
 <!--    profile picture:start-->
     <LinearLayout
@@ -63,11 +62,12 @@
 
 <!--    edit btn:start -->
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/edit_profil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/primary3"
         app:cornerRadius="8dp"
-        android:text="@string/masuk"
+        android:text="@string/editProfil"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:fontFamily="sans-serif-medium"
@@ -77,5 +77,29 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_picture"
         />
 <!--    edit btn:end -->
+
+<!--    tab:start -->
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/primary4"
+        app:tabTextColor="@color/white"
+        app:tabIndicatorColor="@color/secondary5"
+        app:layout_constraintTop_toBottomOf="@+id/edit_profil"
+        >
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/blog_kamu"
+            />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tersimpan"
+            />
+    </com.google.android.material.tabs.TabLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

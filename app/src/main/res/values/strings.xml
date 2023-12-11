@@ -5,12 +5,13 @@
 
     <string name="blog">Blog</string>
     <string name="topik">Topik Blog</string>
-    <string name="blogPribadi">Blog kamu</string>
+    <string name="blog_kamu">Blog kamu</string>
     <string name="tersimpan">Tersimpan</string>
     <string name="profil">Profil</string>
     <string name="editProfil">Edit Profil</string>
     <string name="daftar">Daftar</string>
     <string name="masuk">Masuk</string>
+    <string name="notif">Notifikasi</string>
 
     <string name="onboard">
         Mari lestarikan lingkungan alam, dengan berbagi ilmu, dimulai dari Anda!
@@ -18,6 +19,13 @@
     <string name="udah_akun">Sudah punya akun?</string>
     <string name="belum_akun">Belum punya akun?</string>
     <string name="test_nama">Budi Doremi</string>
+
+    <string name="card_title">Karhutla</string>
+    <string name="card_author">Budi Doremi</string>
+    <string name="card_date">20 September 2023</string>
+    <string name="card_desc">
+        Karhutla adalah peristiwa terbakarnya hutan atau lahan baik itu secara alami maupun akibat ulah manusia yang berakibat kerugian ekologi.
+    </string>
 
     <string name="halaman_home">Home</string>
     <string name="halaman_create">Create</string>

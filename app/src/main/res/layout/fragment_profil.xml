@@ -1,15 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/konten_profil"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.ProfilFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<!--    header:start -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="28dp"
+        android:elevation="20dp"
+        android:layout_marginTop="-15dp"
+        android:background="@drawable/bg_tab"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <!--    profile picture:start-->
+        <LinearLayout
+            android:id="@+id/profile_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:padding="2dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/bg_tab_indicator"
+                android:src="@drawable/ic_launcher_foreground"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/test_nama"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="2dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/bg_tab_icon">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1 Blog"
+                        android:textColor="@color/secondary3"
+                        android:fontFamily="sans-serif-medium"
+                        />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <!--    profile picturee:end -->
+
+        <!--    edit btn:start -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/edit_profil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary3"
+            android:text="@string/editProfil"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.02"
+            android:layout_marginTop="16dp"
+            app:cornerRadius="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_picture"
+            />
+        <!--    edit btn:end -->
+
+        <!--    tab:start -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_profil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/primary4"
+            app:tabTextColor="@color/white"
+            app:tabIndicatorColor="@color/secondary5"
+            app:layout_constraintTop_toBottomOf="@+id/edit_profil"
+            >
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/blog_kamu"
+                />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tersimpan"
+                />
+        </com.google.android.material.tabs.TabLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--        header:end -->
+
+<!--    viewpager:start -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/halaman_profil" />
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        />
 
-</FrameLayout>
+<!--    container:start -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/header">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentPadding="10dp"
+            app:cardBackgroundColor="@color/foreground"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--                card header:start -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/card_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/card_title"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/secondary5"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/card_author"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/card_author"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/black"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            />
+
+                        <TextView
+                            android:id="@+id/card_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/card_date"
+                            android:textColor="@color/primary1"
+                            app:layout_constraintTop_toBottomOf="@+id/card_author"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <!--                card header:end -->
+
+                <!--                card content:start -->
+                <TextView
+                    android:id="@+id/card_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_desc"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/primary2"
+                    />
+                <!--                card content:end-->
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+<!--    container:end -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,30 +8,51 @@
     tools:context=".MainActivity">
 
 <!--    header:start -->
-    <include
-        layout="@layout/comp_header"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginTop="-15dp"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        app:liftOnScroll="false"
+        android:background="@color/primary4"
+        >
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            app:titleTextColor="@color/secondary5"
+            app:title="@string/app_name"
+            app:menu="@menu/header" />
+
+    </com.google.android.material.appbar.AppBarLayout>
 <!--    header:end -->
 
 <!--    content:start -->
-    <include
-        layout="@layout/fragment_home"
+    <LinearLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 <!--    content:end -->
 
 <!--    navbar:start -->
-    <include
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navbar"
-        layout="@layout/comp_navbar"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/bg_tab"
+        app:menu="@menu/navbar"
+        app:itemIconTint="@drawable/navbar_tab"
+        app:itemTextColor="@drawable/navbar_tab_text"
+        app:elevation="10dp"
+        app:compatShadowEnabled="true"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
