@@ -1,18 +1,22 @@
 <resources>
+    <!--    main -->
     <string name="app_name">Ekolog App</string>
     <string name="tagline">Lestarikan Alam!</string>
     <string name="explore">Ayo Jelajahi!</string>
 
-    <string name="blog">Blog</string>
-    <string name="topik">Topik Blog</string>
-    <string name="blog_kamu">Blog kamu</string>
-    <string name="tersimpan">Tersimpan</string>
+    <!--    important-->
+    <string name="laporan">Laporan</string>
+    <string name="topik">Topik</string>
+    <string name="laporan_kamu">Laporanmu</string>
+    <string name="laporan_tersimpan">Tersimpan</string>
     <string name="profil">Profil</string>
     <string name="editProfil">Edit Profil</string>
+    <string name="update">Update Profil</string>
     <string name="daftar">Daftar</string>
     <string name="masuk">Masuk</string>
     <string name="notif">Notifikasi</string>
 
+    <!--    util-->
     <string name="onboard">
         Mari lestarikan lingkungan alam, dengan berbagi ilmu, dimulai dari Anda!
     </string>
@@ -20,6 +24,7 @@
     <string name="belum_akun">Belum punya akun?</string>
     <string name="test_nama">Budi Doremi</string>
 
+    <!--    card test-->
     <string name="card_title">Karhutla</string>
     <string name="card_author">Budi Doremi</string>
     <string name="card_date">20 September 2023</string>
@@ -27,11 +32,13 @@
         Karhutla adalah peristiwa terbakarnya hutan atau lahan baik itu secara alami maupun akibat ulah manusia yang berakibat kerugian ekologi.
     </string>
 
+    <!--    halaman -->
     <string name="halaman_home">Home</string>
     <string name="halaman_create">Create</string>
     <string name="halaman_laporan">Laporan</string>
     <string name="halaman_profil">Profil</string>
 
+    <!--    biodata-->
     <string name="username">Username</string>
     <string name="back_username">Masukkan username</string>
     <string name="email">Email</string>
@@ -39,10 +46,82 @@
     <string name="pass">Password</string>
     <string name="back_pass">Masukkan Password</string>
 
-    <string name="judulBlog">Judul Blog</string>
-    <string name="gambarBlog">Gambar Blog</string>
-    <string name="labelBlog">Label Blog</string>
-    <string name="kontenBlog">Konten Blog</string>
+    <!--    laporan-->
+    <string name="judulLaporan">Judul Laporan</string>
+    <string name="gambarLaporan">Gambar Laporan</string>
+    <string name="labelLaporan">Label Laporan</string>
+    <string name="kontenLaporan">Konten Laporan</string>
+    <string name="laporkan">Laporkan Bencana</string>
+    <string name="laporanBencana">Laporan Bencana</string>
+
+    <!--    form laporan-->
+    <string name="bencana">Bencana</string>
+    <string name="back_bencana">Masukkan bencana</string>
+    <string name="tanggal">Tanggal Bencana</string>
+    <string name="back_tanggal">Masukkan tanggal bencana</string>
+    <string name="lokasi">Lokasi Bencana</string>
+    <string name="back_lokasi">Masukkan lokasi bencana</string>
+    <string name="kota">Kota/Kabupaten</string>
+    <string name="back_kota">Masukkan kota/kabupaten bencana</string>
+    <string name="provinsi">Provinsi</string>
+    <string name="back_provinsi">Masukkan provinsi bencana</string>
+    <string name="meninggal">Meninggal</string>
+    <string name="back_meninggal">Jumlah yang meninggal</string>
+    <string name="terluka">Terluka</string>
+    <string name="back_terluka">Jumlah yang terluka</string>
+    <string name="hilang">Hilang</string>
+    <string name="back_hilang">Jumlah yang hilang</string>
+    <string name="rumah">Rumah Rusak</string>
+    <string name="back_rumah">Jumlah rumah rusak</string>
+    <string name="terendam">Rumah Terendam</string>
+    <string name="back_terendam">Jumlah rumah terendam</string>
+    <string name="fasilitas">Fasilitas Rusak</string>
+    <string name="back_fasilitas">Jumlah fasilitas rusak</string>
+    <string name="penyebab">Penyebab</string>
+    <string name="back_penyebab">Tuliskan penyebab bencana...</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_onboard">OnboardActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
+        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
+        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
+        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
+        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
+        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
+        est.\n\n
+        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
+        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
+        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
+        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
+        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
+        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
+        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
+        convallis.\n\n
+        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
+        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
+        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
+        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
+        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
+        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
+    </string>
 </resources>

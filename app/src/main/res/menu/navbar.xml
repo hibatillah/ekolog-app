@@ -10,12 +10,6 @@
     <item
         android:id="@+id/tab_create"
         android:icon="@drawable/ic_create"
-        android:title="@string/halaman_create"
-        android:contentDescription="@string/halaman_create"
-        />
-    <item
-        android:id="@+id/tab_laporan"
-        android:icon="@drawable/ic_laporan"
         android:title="@string/halaman_laporan"
         android:contentDescription="@string/halaman_laporan"
         />

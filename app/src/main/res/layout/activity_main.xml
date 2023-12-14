@@ -8,25 +8,13 @@
     tools:context=".MainActivity">
 
 <!--    header:start -->
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/header"
+    <include
+        layout="@layout/comp_header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginTop="-15dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:liftOnScroll="false"
-        android:background="@color/primary4"
-        >
-
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/topAppBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
-            app:titleTextColor="@color/secondary5"
-            app:title="@string/app_name"
-            app:menu="@menu/header" />
-
-    </com.google.android.material.appbar.AppBarLayout>
+        />
 <!--    header:end -->
 
 <!--    content:start -->
@@ -43,7 +31,7 @@
 <!--    navbar:start -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navbar"
-        android:layout_width="350dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
         android:background="@drawable/bg_tab"

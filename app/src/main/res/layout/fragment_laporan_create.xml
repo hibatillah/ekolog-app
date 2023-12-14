@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.LaporanCreateFragment">
+
+<!--    header:start -->
+    <include
+        android:id="@+id/header"
+        layout="@layout/comp_header_laporan"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="-20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+<!--    header:end -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header">
+
+<!--        form:start -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="32dp">
+
+<!--            bencana:start -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="@string/bencana"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/bencana"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/foreground"
+                    android:hint="@string/back_bencana"
+                    android:inputType="text"
+                    android:padding="10dp" />
+            </LinearLayout>
+<!--            bencana:end -->
+
+<!--            tanggal:start -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="@string/tanggal"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/tanggal_bencana"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/foreground"
+                    android:hint="@string/back_tanggal"
+                    android:inputType="text"
+                    android:padding="10dp" />
+            </LinearLayout>
+<!--            tanggal:end -->
+
+<!--            lokasi:start -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="@string/lokasi"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/lokasi_bencana"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/foreground"
+                    android:hint="@string/back_lokasi"
+                    android:inputType="text"
+                    android:padding="10dp" />
+            </LinearLayout>
+<!--            lokasi:end -->
+
+<!--            kota:start -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="@string/kota"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/kota_bencana"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/foreground"
+                    android:hint="@string/back_kota"
+                    android:inputType="text"
+                    android:padding="10dp" />
+            </LinearLayout>
+<!--            kota:end -->
+
+<!--            prov:start -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="@string/provinsi"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/provinsi_bencana"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/foreground"
+                    android:hint="@string/back_provinsi"
+                    android:inputType="text"
+                    android:padding="10dp" />
+            </LinearLayout>
+<!--            prov:end -->
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/meninggal"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent"
+                    android:layout_row="0"
+                    android:layout_column="2"
+                    android:gravity="left"
+                    android:text="@string/terluka"
+                    android:textSize="16sp" />
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/jumlah_meninggal"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/foreground"
+                    android:hint="@string/back_meninggal"
+                    android:inputType="text"
+                    android:padding="10dp" />
+
+                <EditText
+                    android:id="@+id/jumlah_terluka"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="2"
+                    android:background="@color/foreground"
+                    android:hint="@string/back_terluka"
+                    android:inputType="text"
+                    android:padding="10dp" />
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hilang"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent"
+                    android:layout_row="0"
+                    android:layout_column="2"
+                    android:gravity="left"
+                    android:text="@string/rumah"
+                    android:textSize="16sp" />
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/jumlah_hilang"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/foreground"
+                    android:hint="@string/back_hilang"
+                    android:inputType="text"
+                    android:padding="10dp" />
+
+                <EditText
+                    android:id="@+id/jumlah_rumah_rusak"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="2"
+                    android:background="@color/foreground"
+                    android:hint="@string/back_rumah"
+                    android:inputType="text"
+                    android:padding="10dp" />
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/terendam"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent"
+                    android:layout_row="0"
+                    android:layout_column="2"
+                    android:gravity="left"
+                    android:text="@string/fasilitas"
+                    android:textSize="16sp" />
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/jumlah_rumah_terendam"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/foreground"
+                    android:hint="@string/back_terendam"
+                    android:inputType="text"
+                    android:padding="10dp" />
+
+                <EditText
+                    android:id="@+id/jumlah_fasum_rusak"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="2"
+                    android:background="@color/foreground"
+                    android:hint="@string/back_fasilitas"
+                    android:inputType="text"
+                    android:padding="10dp" />
+            </GridLayout>
+
+            <!--        penyebab:start -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="@string/penyebab"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/penyebab_bencana"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@color/foreground"
+                    android:hint="@string/back_penyebab"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:gravity="left"/>
+            </LinearLayout>
+            <!--        penyebab:end -->
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/secondary5"
+                android:letterSpacing="0.02"
+                android:text="@string/laporkan"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:cornerRadius="8dp" />
+        </LinearLayout>
+<!--        form:end -->
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

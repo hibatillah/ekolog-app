@@ -6,16 +6,71 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.SignupFragment">
 
-<!--    header:start -->
-    <include
+    <!--    header:start -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header"
-        layout="@layout/comp_header_onboard"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="110dp"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="24dp"
         android:layout_marginTop="-20dp"
         app:layout_constraintTop_toTopOf="parent"
-        />
-<!--    header:end -->
+        android:background="@drawable/bg_navbar">
+
+        <!--    back:start -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_tab"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="24dp"
+                android:background="@drawable/ic_left"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--back:end-->
+
+        <!--brand:start-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/secondary5"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tagline"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif"
+                />
+        </LinearLayout>
+        <!--    brand:end -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    header:end -->
 
 <!--    form:start -->
     <LinearLayout

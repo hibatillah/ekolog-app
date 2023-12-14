@@ -4,11 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.ekologapp.databinding.ActivityMainBinding
-import com.example.ekologapp.fragment.CreateFragment
 import com.example.ekologapp.fragment.HomeFragment
-import com.example.ekologapp.fragment.LaporanFragment
+import com.example.ekologapp.fragment.LaporanCreateFragment
 import com.example.ekologapp.fragment.ProfilFragment
-
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -22,8 +20,7 @@ class MainActivity : AppCompatActivity() {
         binding.navbar.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.tab_home -> changeFragment(HomeFragment())
-                R.id.tab_create -> changeFragment(CreateFragment())
-                R.id.tab_laporan -> changeFragment(LaporanFragment())
+                R.id.tab_laporan -> changeFragment(LaporanCreateFragment())
                 R.id.tab_profil -> changeFragment(ProfilFragment())
                 else -> {}
             }
