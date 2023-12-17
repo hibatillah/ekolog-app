@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         binding.navbar.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.tab_home -> changeFragment(HomeFragment())
-                R.id.tab_laporan -> changeFragment(LaporanCreateFragment())
+                R.id.tab_create -> changeFragment(LaporanCreateFragment())
                 R.id.tab_profil -> changeFragment(ProfilFragment())
                 else -> {}
             }

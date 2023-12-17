@@ -2,8 +2,10 @@ package com.example.ekologapp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.ekologapp.databinding.ActivityOnboardBinding
 import com.example.ekologapp.fragment.LoginFragment
+import com.example.ekologapp.fragment.OnboardingFragment
 import com.example.ekologapp.fragment.SignupFragment
 
 class OnboardActivity : AppCompatActivity() {
@@ -17,14 +19,7 @@ class OnboardActivity : AppCompatActivity() {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
 
-        binding.btnDaftar.setOnClickListener {
-            fragmentTransaction.replace(R.id.container_onboard, SignupFragment())
-            fragmentTransaction.commit()
-        }
-
-        binding.btnMasuk.setOnClickListener {
-            fragmentTransaction.replace(R.id.container_onboard, LoginFragment())
-            fragmentTransaction.commit()
-        }
+        fragmentTransaction.replace(R.id.container_onboard, OnboardingFragment())
+        fragmentTransaction.commit()
     }
 }

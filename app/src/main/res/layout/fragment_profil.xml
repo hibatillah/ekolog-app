@@ -63,7 +63,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1 Blog"
+                        android:text="@string/jumlah_laporan"
                         android:textColor="@color/secondary3"
                         android:fontFamily="sans-serif-medium"
                         />
@@ -121,7 +121,7 @@
 <!--        header:end -->
 
 <!--    content:start -->
-    <LinearLayout
+    <FrameLayout
         android:id="@+id/container_profil"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -7,28 +7,27 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentTransaction
 import com.example.ekologapp.R
-import com.example.ekologapp.databinding.FragmentLoginBinding
-import com.example.ekologapp.databinding.FragmentSignupBinding
+import com.example.ekologapp.databinding.FragmentOnboardingBinding
+import com.example.ekologapp.databinding.FragmentProfilBinding
 
-class SignupFragment : Fragment() {
-    private lateinit var binding: FragmentSignupBinding
+class OnboardingFragment : Fragment() {
+    private lateinit var binding: FragmentOnboardingBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSignupBinding.inflate(layoutInflater)
+        binding = FragmentOnboardingBinding.inflate(layoutInflater)
         val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
 
-        binding.submitSignup.setOnClickListener {
+        binding.btnMasuk.setOnClickListener {
             transaction.replace(R.id.container_onboard, LoginFragment())
             transaction.commit()
         }
 
-        binding.btnBack.setOnClickListener{
-            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-            transaction.replace(R.id.container_onboard, OnboardingFragment())
+        binding.btnDaftar.setOnClickListener {
+            transaction.replace(R.id.container_onboard, SignupFragment())
             transaction.commit()
         }
         return binding.root

@@ -1,10 +1,10 @@
 <resources>
-    <!--    main -->
+<!--    main -->
     <string name="app_name">Ekolog App</string>
     <string name="tagline">Lestarikan Alam!</string>
     <string name="explore">Ayo Jelajahi!</string>
 
-    <!--    important-->
+<!--    important-->
     <string name="laporan">Laporan</string>
     <string name="topik">Topik</string>
     <string name="laporan_kamu">Laporanmu</string>
@@ -16,7 +16,7 @@
     <string name="masuk">Masuk</string>
     <string name="notif">Notifikasi</string>
 
-    <!--    util-->
+<!--    util-->
     <string name="onboard">
         Mari lestarikan lingkungan alam, dengan berbagi ilmu, dimulai dari Anda!
     </string>
@@ -24,7 +24,7 @@
     <string name="belum_akun">Belum punya akun?</string>
     <string name="test_nama">Budi Doremi</string>
 
-    <!--    card test-->
+<!--    card test-->
     <string name="card_title">Karhutla</string>
     <string name="card_author">Budi Doremi</string>
     <string name="card_date">20 September 2023</string>
@@ -32,21 +32,22 @@
         Karhutla adalah peristiwa terbakarnya hutan atau lahan baik itu secara alami maupun akibat ulah manusia yang berakibat kerugian ekologi.
     </string>
 
-    <!--    halaman -->
+<!--    halaman -->
     <string name="halaman_home">Home</string>
     <string name="halaman_create">Create</string>
     <string name="halaman_laporan">Laporan</string>
     <string name="halaman_profil">Profil</string>
 
-    <!--    biodata-->
+<!--    profil-->
     <string name="username">Username</string>
     <string name="back_username">Masukkan username</string>
     <string name="email">Email</string>
     <string name="back_email">Masukkan email</string>
     <string name="pass">Password</string>
     <string name="back_pass">Masukkan Password</string>
+    <string name="jumlah_laporan">1 Laporan</string>
 
-    <!--    laporan-->
+<!--    laporan-->
     <string name="judulLaporan">Judul Laporan</string>
     <string name="gambarLaporan">Gambar Laporan</string>
     <string name="labelLaporan">Label Laporan</string>
@@ -54,7 +55,7 @@
     <string name="laporkan">Laporkan Bencana</string>
     <string name="laporanBencana">Laporan Bencana</string>
 
-    <!--    form laporan-->
+<!--    form laporan-->
     <string name="bencana">Bencana</string>
     <string name="back_bencana">Masukkan bencana</string>
     <string name="tanggal">Tanggal Bencana</string>
@@ -79,6 +80,29 @@
     <string name="back_fasilitas">Jumlah fasilitas rusak</string>
     <string name="penyebab">Penyebab</string>
     <string name="back_penyebab">Tuliskan penyebab bencana...</string>
+
+<!--  konten laporan  -->
+    <string name="longsor">Tanah Longsor</string>
+    <string name="penulis">Penulis</string>
+    <string name="tgl">30 November 2023</string>
+    <string name="tingkat">Tingkat Kerusakan Bencana</string>
+
+    <string name="ket_loc">Kec. Paliman Ds. Cilukrak Kec. Sumber Kel. Sumber Kec. Gegesik Kel. Sibubut</string>
+    <string name="ket_city">Bangli</string>
+    <string name="ket_prov">Bali</string>
+    <string name="ket_meninggal">2</string>
+    <string name="ket_luka">0</string>
+    <string name="ket_hilang">0</string>
+    <string name="ket_rumah">2</string>
+    <string name="ket_fasilitas">0</string>
+    <string name="ket_terendam">0</string>
+    <string name="ket_tingkat">Cukup Parah</string>
+    <string name="ket_sebab">
+        Akibat turunnya hujan diwilayah Kabupaten Bangli sejak sore tadi, telah membawa
+        dampak kejadian berupa terjadinya tanah longsor yang masuk ke kamar warga, dan menyebabkan
+        2 orang (laki - perempuan) lansia tertimbun longsoran.
+    </string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_onboard">OnboardActivity</string>

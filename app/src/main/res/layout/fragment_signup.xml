@@ -176,6 +176,7 @@
 <!--        password:end -->
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/submit_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/secondary5"
@@ -200,7 +201,6 @@
                 android:textSize="14sp"
                 android:layout_marginEnd="4dp"
                 />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

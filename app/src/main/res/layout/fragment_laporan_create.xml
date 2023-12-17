@@ -9,7 +9,7 @@
 <!--    header:start -->
     <include
         android:id="@+id/header"
-        layout="@layout/comp_header_laporan"
+        layout="@layout/comp_header_laporan_create"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginTop="-20dp"
@@ -303,7 +303,7 @@
                     android:padding="10dp" />
             </GridLayout>
 
-            <!--        penyebab:start -->
+<!--        penyebab:start -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -327,7 +327,7 @@
                     android:padding="10dp"
                     android:gravity="left"/>
             </LinearLayout>
-            <!--        penyebab:end -->
+<!--        penyebab:end -->
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
