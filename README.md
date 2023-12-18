@@ -1,4 +1,4 @@
-## 🌱 Ekolog App - Aplikasi Laporan Bencana
+# 🌱 Ekolog App - Aplikasi Laporan Bencana
 
 ***Kelompok 8 - 3SIC | Mobile & Data Science*** <br/>
 Melaporkan, membagikan informasi terkait suatu bencana alam mengidentifikasi tingkat kerusakan dari suatu bencana. <br/>

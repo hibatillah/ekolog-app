@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.marginStart
+import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.ekologapp.R
@@ -23,12 +25,22 @@ class ProfilFragment: Fragment() {
         transaction.replace(R.id.container_profil, ProfilLaporanFragment())
         transaction.commit()
 
-        binding.tabLaporan.setOnClickListener {
+        val tabLaporan = binding.tabLaporan
+        val tabTersimpan = binding.tabTersimpan
+        val indicator = binding.tabIndicator
+
+        tabLaporan.setOnClickListener {
+            indicator.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                marginStart = 15
+            }
             transaction.replace(R.id.container_profil, ProfilLaporanFragment())
             transaction.commit()
         }
 
-        binding.tabTersimpan.setOnClickListener {
+        tabTersimpan.setOnClickListener {
+            indicator.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                marginStart = 200
+            }
             transaction.replace(R.id.container_profil, ProfilSavedFragment())
             transaction.commit()
         }

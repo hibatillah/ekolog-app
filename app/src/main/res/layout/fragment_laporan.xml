@@ -123,7 +123,7 @@
                     android:layout_marginBottom="10dp"
                     android:textColor="@color/black"
                     android:text="@string/ket_loc"
-                    android:size="16sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
 <!--    location:end -->
 
@@ -324,7 +324,7 @@
                     android:layout_marginBottom="10dp"
                     android:textColor="@color/black"
                     android:text="@string/ket_tingkat"
-                    android:size="16sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
 <!--    damage:end -->
 
@@ -345,7 +345,7 @@
                     android:layout_marginBottom="10dp"
                     android:textColor="@color/black"
                     android:text="@string/ket_sebab"
-                    android:size="16sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
 <!--    reason:end -->
 
