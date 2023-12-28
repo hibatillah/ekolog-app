@@ -25,6 +25,5 @@ class ProfilEditFragment : Fragment() {
             transaction.commit()
         }
         return binding.root
-
     }
 }

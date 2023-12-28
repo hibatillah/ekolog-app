@@ -7,7 +7,7 @@
     android:layout_marginBottom="24dp"
     android:elevation="20dp">
 
-<!--    home:start -->
+    <!--    home:start -->
     <RelativeLayout
         android:id="@+id/tab_home"
         android:layout_width="48dp"
@@ -24,9 +24,9 @@
             android:contentDescription="@string/halaman_home"
             />
     </RelativeLayout>
-<!--    home:end -->
+    <!--    home:end -->
 
-<!--    create:start -->
+    <!--    create:start -->
     <RelativeLayout
         android:id="@+id/tab_create"
         android:layout_width="48dp"
@@ -43,9 +43,9 @@
             android:contentDescription="@string/halaman_create"
             />
     </RelativeLayout>
-<!--    create:end -->
+    <!--    create:end -->
 
-<!--    laporan:start -->
+    <!--    laporan:start -->
     <RelativeLayout
         android:id="@+id/tab_laporan"
         android:layout_width="48dp"
@@ -62,9 +62,9 @@
             android:contentDescription="@string/halaman_laporan"
             />
     </RelativeLayout>
-<!--    laporan:end -->
+    <!--    laporan:end -->
 
-<!--    profil:start -->
+    <!--    profil:start -->
     <RelativeLayout
         android:id="@+id/tab_profil"
         android:layout_width="48dp"
@@ -80,6 +80,6 @@
             android:contentDescription="@string/halaman_profil"
             />
     </RelativeLayout>
-<!--    profil:end -->
+    <!--    profil:end -->
 
 </LinearLayout>

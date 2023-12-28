@@ -26,9 +26,7 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_onboard" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
