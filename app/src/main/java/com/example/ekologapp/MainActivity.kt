@@ -6,8 +6,7 @@ import androidx.fragment.app.Fragment
 import com.example.ekologapp.databinding.ActivityMainBinding
 import com.example.ekologapp.fragment.HomeFragment
 import com.example.ekologapp.fragment.LaporanCreateFragment
-import com.example.ekologapp.fragment.ProfilFragment
-import java.util.Calendar
+import com.example.ekologapp.fragment.ProfilLaporanFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -22,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId) {
                 R.id.tab_home -> changeFragment(HomeFragment())
                 R.id.tab_create -> changeFragment(LaporanCreateFragment())
-                R.id.tab_profil -> changeFragment(ProfilFragment())
+                R.id.tab_profil -> changeFragment(ProfilLaporanFragment())
                 else -> {}
             }
             true

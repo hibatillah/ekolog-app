@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentTransaction
 import com.example.ekologapp.R
 import com.example.ekologapp.databinding.FragmentOnboardingBinding
-import com.example.ekologapp.databinding.FragmentProfilBinding
 
 class OnboardingFragment : Fragment() {
     private lateinit var binding: FragmentOnboardingBinding
