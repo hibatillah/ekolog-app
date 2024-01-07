@@ -3,32 +3,35 @@ package com.example.ekologapp.fragment
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.FragmentTransaction
 import com.example.ekologapp.R
-import com.example.ekologapp.databinding.FragmentSignupBinding
+import com.example.ekologapp.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
-class SignupFragment : Fragment() {
-    private lateinit var binding: FragmentSignupBinding
+class SignupFragment : Fragment(R.layout.fragment_signup) {
     private lateinit var auth: FirebaseAuth
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentSignupBinding.inflate(layoutInflater)
         auth = Firebase.auth
 
         // get form element
-        val usernameInput = binding.inputUsername
-        val emailInput = binding.inputEmail
-        val passwordInput = binding.inputPassword
+        val usernameInput: EditText = view.findViewById(R.id.input_username_signup)
+        val emailInput: EditText = view.findViewById(R.id.input_email_signup)
+        val passwordInput: EditText = view.findViewById(R.id.input_password_signup)
+        val btnDaftar: Button = view.findViewById(R.id.submit_signup)
+        val btnBack: ConstraintLayout = view.findViewById(R.id.btn_back)
 
         val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
 
-        binding.submitSignup.setOnClickListener {
+        btnDaftar.setOnClickListener {
             val username = usernameInput.text.toString().trim()
             val email = emailInput.text.toString().trim()
             val password = passwordInput.text.toString().trim()
@@ -59,10 +62,7 @@ class SignupFragment : Fragment() {
                         val database = FirebaseDatabase.getInstance()
                         val reference = database.getReference("User") // location to save data
 
-                        val userData = HashMap<String, Any>()
-                        userData["username"] = username
-                        userData["email"] = email
-                        userData["password"] = password
+                        val userData = User(userId!!, username, email, password)
 
                         userId?.let {
                             reference.child(it).setValue(userData)
@@ -76,7 +76,6 @@ class SignupFragment : Fragment() {
                                         transaction.replace(R.id.container_onboard, LoginFragment())
                                         transaction.commit()
                                     }
-
                                 }
                                 .addOnFailureListener { e ->
                                     // data failed to save
@@ -91,11 +90,9 @@ class SignupFragment : Fragment() {
                             "Pendaftaran gagal: ${exception?.message}", Toast.LENGTH_SHORT).show()
                     }
                 }
-
-
         }
 
-        binding.btnBack.setOnClickListener{
+        btnBack.setOnClickListener{
             val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
             transaction.replace(R.id.container_onboard, OnboardingFragment())
             transaction.commit()

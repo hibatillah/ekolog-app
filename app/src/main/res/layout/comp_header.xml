@@ -45,24 +45,6 @@
         </LinearLayout>
 <!--        title:end -->
 
-<!--        notif:start -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="6dp"
-            app:contentPadding="10dp"
-            app:cardBackgroundColor="@color/primary3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_bell"
-                />
-        </androidx.cardview.widget.CardView>
-<!--        notif:end -->
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

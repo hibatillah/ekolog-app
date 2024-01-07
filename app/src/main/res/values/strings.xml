@@ -23,6 +23,11 @@
     <string name="udah_akun">Sudah punya akun?</string>
     <string name="belum_akun">Belum punya akun?</string>
     <string name="test_nama">Budi Doremi</string>
+    <string name="fun_fact_title">Apakah Kamu Tau..?</string>
+    <string name="fun_fact_content">
+        Hutan Hujan Amazon menghasilkan 20% oksigen dunia, sehingga sering disebut sebagai “paru-paru Bumi”.
+    </string>
+    <string name="lainnya">Laporan Lainnya</string>
 
 <!--    card test-->
     <string name="card_title">Karhutla</string>
@@ -67,11 +72,11 @@
     <string name="provinsi">Provinsi</string>
     <string name="back_provinsi">Masukkan provinsi bencana</string>
     <string name="meninggal">Meninggal</string>
-    <string name="back_meninggal">Jumlah yang meninggal</string>
+    <string name="back_meninggal">Jumlah meninggal</string>
     <string name="terluka">Terluka</string>
-    <string name="back_terluka">Jumlah yang terluka</string>
+    <string name="back_terluka">Jumlah terluka</string>
     <string name="hilang">Hilang</string>
-    <string name="back_hilang">Jumlah yang hilang</string>
+    <string name="back_hilang">Jumlah hilang</string>
     <string name="rumah">Rumah Rusak</string>
     <string name="back_rumah">Jumlah rumah rusak</string>
     <string name="terendam">Rumah Terendam</string>

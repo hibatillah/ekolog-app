@@ -21,7 +21,7 @@ class ProfilEditFragment : Fragment() {
 
         binding.btnBack.setOnClickListener{
             val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-            transaction.replace(R.id.container, ProfilLaporanFragment())
+            transaction.replace(R.id.container, ProfilFragment())
             transaction.commit()
         }
         return binding.root

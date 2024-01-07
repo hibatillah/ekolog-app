@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "749575888523",
+    "firebase_url": "https://ekolog-8ead9-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "ekolog-8ead9",
+    "storage_bucket": "ekolog-8ead9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749575888523:android:b1a9d8ae78d828dfc9fe8e",
+        "android_client_info": {
+          "package_name": "com.example.ekologapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAF4PISIGH6vRyHCxBHKgz87SixpZpPv34"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

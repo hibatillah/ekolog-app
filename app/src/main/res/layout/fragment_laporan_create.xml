@@ -20,7 +20,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header">
 
@@ -30,7 +29,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingHorizontal="20dp"
-            android:paddingVertical="32dp">
+            android:paddingTop="32dp"
+            android:paddingBottom="200dp">
 
 <!--            bencana:start -->
             <LinearLayout
@@ -191,7 +191,7 @@
                     android:layout_height="wrap_content"
                     android:background="@color/foreground"
                     android:hint="@string/back_meninggal"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:padding="10dp" />
 
                 <EditText
@@ -202,7 +202,7 @@
                     android:layout_column="2"
                     android:background="@color/foreground"
                     android:hint="@string/back_terluka"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:padding="10dp" />
             </GridLayout>
 
@@ -215,56 +215,7 @@
                 <TextView
                     android:layout_width="180dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/hilang"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="180dp"
-                    android:layout_height="match_parent"
-                    android:layout_row="0"
-                    android:layout_column="2"
-                    android:gravity="left"
                     android:text="@string/rumah"
-                    android:textSize="16sp" />
-            </GridLayout>
-
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:orientation="vertical">
-
-                <EditText
-                    android:id="@+id/jumlah_hilang"
-                    android:layout_width="175dp"
-                    android:layout_height="wrap_content"
-                    android:background="@color/foreground"
-                    android:hint="@string/back_hilang"
-                    android:inputType="text"
-                    android:padding="10dp" />
-
-                <EditText
-                    android:id="@+id/jumlah_rumah_rusak"
-                    android:layout_width="180dp"
-                    android:layout_height="wrap_content"
-                    android:layout_row="0"
-                    android:layout_column="2"
-                    android:background="@color/foreground"
-                    android:hint="@string/back_rumah"
-                    android:inputType="text"
-                    android:padding="10dp" />
-            </GridLayout>
-
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="180dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/terendam"
                     android:textSize="16sp" />
 
                 <TextView
@@ -283,13 +234,14 @@
                 android:layout_marginBottom="10dp"
                 android:orientation="vertical">
 
+
                 <EditText
-                    android:id="@+id/jumlah_rumah_terendam"
+                    android:id="@+id/jumlah_rumah_rusak"
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
                     android:background="@color/foreground"
-                    android:hint="@string/back_terendam"
-                    android:inputType="text"
+                    android:hint="@string/back_rumah"
+                    android:inputType="number"
                     android:padding="10dp" />
 
                 <EditText
@@ -300,7 +252,7 @@
                     android:layout_column="2"
                     android:background="@color/foreground"
                     android:hint="@string/back_fasilitas"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:padding="10dp" />
             </GridLayout>
 
@@ -331,6 +283,7 @@
 <!--        penyebab:end -->
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_create_laporan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"

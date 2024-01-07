@@ -4,7 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.FragmentTransaction
 import com.example.ekologapp.MainActivity
 import com.example.ekologapp.R
@@ -16,20 +19,20 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
-class LoginFragment : Fragment() {
-    private lateinit var binding: FragmentLoginBinding
+class LoginFragment : Fragment(R.layout.fragment_login) {
     private lateinit var auth: FirebaseAuth
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentLoginBinding.inflate(layoutInflater)
         auth = Firebase.auth
 
         // get form element
-        val emailInput = binding.inputEmail
-        val passwordInput = binding.inputPassword
+        val emailInput = view.findViewById<EditText>(R.id.input_email_login)
+        val passwordInput = view.findViewById<EditText>(R.id.input_password_login)
+        val btnLogin = view.findViewById<Button>(R.id.submit_login)
+        val btnBack = view.findViewById<ConstraintLayout>(R.id.btn_back)
 
-        binding.submitLogin.setOnClickListener {
+        btnLogin.setOnClickListener {
             val email = emailInput.text.toString().trim()
             val password = passwordInput.text.toString().trim()
 
@@ -81,7 +84,7 @@ class LoginFragment : Fragment() {
                 }
         }
 
-        binding.btnBack.setOnClickListener{
+        btnBack.setOnClickListener{
             val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
             transaction.replace(R.id.container_onboard, OnboardingFragment())
             transaction.commit()
