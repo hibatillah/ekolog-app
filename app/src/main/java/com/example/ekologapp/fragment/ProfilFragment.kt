@@ -35,6 +35,8 @@ class ProfilFragment : Fragment() {
     ): View? {
         binding = FragmentProfilBinding.inflate(layoutInflater)
         val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+        firebaseAuth = FirebaseAuth.getInstance()
+        ref = FirebaseDatabase.getInstance().getReference("User")
 
         val editProfil = binding.editProfil
 

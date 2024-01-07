@@ -26,6 +26,7 @@ class ProfilEditFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentProfilEditBinding.inflate(layoutInflater)
+        firebaseAuth = FirebaseAuth.getInstance()
         isFragmentAttached = true
 
         getCurrentUser()
