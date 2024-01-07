@@ -1,5 +1,6 @@
 package com.example.ekologapp.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.AdapterView.OnItemClickListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.ekologapp.Laporan
+import com.example.ekologapp.OnboardActivity
 import com.example.ekologapp.R
 import com.example.ekologapp.adapter.CardAdapter
 import com.example.ekologapp.databinding.FragmentProfilBinding
@@ -23,6 +25,8 @@ class ProfilFragment : Fragment() {
     private lateinit var binding: FragmentProfilBinding
     private lateinit var laporanList: MutableList<Laporan>
     private lateinit var ref: DatabaseReference
+    private lateinit var firebaseAuth: FirebaseAuth
+    private var isFragmentAttached = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,12 +43,21 @@ class ProfilFragment : Fragment() {
             transaction.commit()
         }
 
+        binding.logout.setOnClickListener {
+            firebaseAuth.signOut()
+            val i = Intent(requireContext(), OnboardActivity::class.java)
+            startActivity(i)
+            requireActivity().finish()
+        }
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+        isFragmentAttached = true
+
+        getCurrentUser()
 
         var userId = ""
 
@@ -86,5 +99,29 @@ class ProfilFragment : Fragment() {
                 // Handle onCancelled
             }
         })
+    }
+
+    private fun getCurrentUser() {
+        val user = firebaseAuth.currentUser
+        val userId = user?.uid
+
+        userId?.let {
+            ref.child(it).addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (isFragmentAttached) { // Pastikan fragment masih terpasang sebelum menggunakan konteks
+                        if (snapshot.exists()) {
+                            val email = snapshot.child("email").getValue(String::class.java)
+                            val username = snapshot.child("username").getValue(String::class.java)
+
+                            binding.userName.setText(username)
+                            binding.userEmail.setText(email)
+                        }
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                }
+            })
+        }
     }
 }

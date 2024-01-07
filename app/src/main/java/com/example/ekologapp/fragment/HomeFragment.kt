@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.ekologapp.Laporan
@@ -35,6 +37,8 @@ class HomeFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val linearLayout: LinearLayout = binding.linearHorizontal
+        val layoutInflater = LayoutInflater.from(requireContext())
 
         ref = FirebaseDatabase.getInstance().getReference("Laporan")
         laporanAdmin = mutableListOf()
@@ -54,25 +58,28 @@ class HomeFragment: Fragment() {
                                 if (laporan.userRole == "user") {
                                     laporanUser.add(it)
                                 } else {
-                                    laporanAdmin.add(it)
+                                    val view: View = layoutInflater.inflate(R.layout.card_vertical, linearLayout, false)
+                                    val title = view.findViewById<TextView>(R.id.card_title)
+                                    val author = view.findViewById<TextView>(R.id.card_author)
+                                    val date = view.findViewById<TextView>(R.id.card_date)
+                                    val content = view.findViewById<TextView>(R.id.card_content)
+
+                                    title.setText(laporan.bencana)
+                                    author.setText(laporan.userName)
+                                    date.setText(laporan.tanggal)
+                                    content.setText(laporan.penyebab)
+
+                                    linearLayout?.addView(view)
                                 }
                             }
                         }
-
-                        val adapterAdmin = CardAdapter(
-                            requireActivity(),
-                            R.layout.card_vertical,
-                            laporanAdmin
-                        )
 
                         val adapterUser = CardAdapter(
                             requireActivity(),
                             R.layout.card_horizontal,
                             laporanUser
                         )
-                        binding.listLaporanHorizontal.adapter = adapterAdmin
                         binding.listLaporanVertical.adapter = adapterUser
-                        println("Output: " + laporanAdmin)
                         println("Output: " + laporanUser)
                     }
                 }

@@ -1,10 +1,10 @@
 <resources>
-<!--    main -->
+    <!--    main -->
     <string name="app_name">Ekolog App</string>
     <string name="tagline">Lestarikan Alam!</string>
     <string name="explore">Ayo Jelajahi!</string>
 
-<!--    important-->
+    <!--    important-->
     <string name="laporan">Laporan</string>
     <string name="topik">Topik</string>
     <string name="laporan_kamu">Laporanmu</string>
@@ -16,7 +16,7 @@
     <string name="masuk">Masuk</string>
     <string name="notif">Notifikasi</string>
 
-<!--    util-->
+    <!--    util-->
     <string name="onboard">
         Mari lestarikan lingkungan alam, dengan berbagi ilmu, dimulai dari Anda!
     </string>
@@ -29,7 +29,7 @@
     </string>
     <string name="lainnya">Laporan Lainnya</string>
 
-<!--    card test-->
+    <!--    card test-->
     <string name="card_title">Karhutla</string>
     <string name="card_author">Budi Doremi</string>
     <string name="card_date">20 September 2023</string>
@@ -37,13 +37,13 @@
         Karhutla adalah peristiwa terbakarnya hutan atau lahan baik itu secara alami maupun akibat ulah manusia yang berakibat kerugian ekologi.
     </string>
 
-<!--    halaman -->
+    <!--    halaman -->
     <string name="halaman_home">Home</string>
     <string name="halaman_create">Create</string>
     <string name="halaman_laporan">Laporan</string>
     <string name="halaman_profil">Profil</string>
 
-<!--    profil-->
+    <!--    profil-->
     <string name="username">Username</string>
     <string name="back_username">Masukkan username</string>
     <string name="email">Email</string>
@@ -52,15 +52,18 @@
     <string name="back_pass">Masukkan Password</string>
     <string name="jumlah_laporan">1 Laporan</string>
 
-<!--    laporan-->
+    <!--    laporan-->
     <string name="judulLaporan">Judul Laporan</string>
     <string name="gambarLaporan">Gambar Laporan</string>
     <string name="labelLaporan">Label Laporan</string>
     <string name="kontenLaporan">Konten Laporan</string>
     <string name="laporkan">Laporkan Bencana</string>
     <string name="laporanBencana">Laporan Bencana</string>
+    <string name="edit_laporan">Edit Laporan Bencana</string>
+    <string name="update_laporan">Update Laporan</string>
+    <string name="detail_user">Detail User</string>
 
-<!--    form laporan-->
+    <!--    form laporan-->
     <string name="bencana">Bencana</string>
     <string name="back_bencana">Masukkan bencana</string>
     <string name="tanggal">Tanggal Bencana</string>
@@ -86,7 +89,7 @@
     <string name="penyebab">Penyebab</string>
     <string name="back_penyebab">Tuliskan penyebab bencana...</string>
 
-<!--  konten laporan  -->
+    <!--  konten laporan  -->
     <string name="longsor">Tanah Longsor</string>
     <string name="penulis">Penulis</string>
     <string name="tgl">30 November 2023</string>

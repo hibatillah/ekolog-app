@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentTransaction
 import com.example.ekologapp.R
 import com.example.ekologapp.databinding.FragmentLaporanBinding
@@ -32,27 +34,56 @@ class LaporanFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         ref = FirebaseDatabase.getInstance().getReference("Laporan")
         val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+        val laporanId = getArguments()?.getString("id");
         isFragmentAttached = true
 
-        displayUserInfo()
+        if (laporanId != null) {
+            showLaporanDetail(laporanId)
+        }
 
         binding.backBtn.setOnClickListener {
             transaction.replace(R.id.container, HomeFragment())
             transaction.commit()
         }
+
+        binding.deleteLaporan.setOnClickListener {
+            val dbLaporan = laporanId?.let { id ->
+                FirebaseDatabase.getInstance().getReference("Laporan")
+                    .child(id)
+            }
+            if (dbLaporan != null) {
+                dbLaporan.removeValue()
+            }
+
+            transaction.replace(R.id.container, HomeFragment())
+            transaction.commit()
+
+            Toast.makeText(requireContext(), "Laporan berhasil dihapus", Toast.LENGTH_SHORT)
+                .show()
+        }
+
+        binding.editLaporan.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("id", laporanId)
+
+            val EditlaporanFragment = LaporanEditFragment()
+            EditlaporanFragment.arguments = bundle
+
+            val fragmentManager = (requireContext() as FragmentActivity).supportFragmentManager
+            val transaction: FragmentTransaction = fragmentManager.beginTransaction()
+
+            transaction.replace(R.id.container, EditlaporanFragment)
+            transaction.addToBackStack(null)  // Untuk menambahkan ke tumpukan kembali
+            transaction.commit()
+        }
     }
 
-    private fun displayUserInfo() {
-        val laporanId = getArguments()?.getString("id");
-
+    private fun showLaporanDetail(laporanId: String) {
         laporanId?.let {
             ref.child(it).addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (isFragmentAttached) { // Pastikan fragment masih terpasang sebelum menggunakan konteks
                         if (snapshot.exists()) {
-                            val email = snapshot.child("email").getValue(String::class.java)
-                            val username = snapshot.child("nama").getValue(String::class.java)
-
                             val judul = snapshot.child("bencana").getValue(String::class.java)
                             val tanggal = snapshot.child("tanggal").getValue(String::class.java)
                             val penulis = snapshot.child("userName").getValue(String::class.java)
@@ -78,14 +109,6 @@ class LaporanFragment : Fragment() {
                             binding.laporanFasilitas.setText(fasilitas.toString())
                             binding.laporanKerusakan.setText(kerusakan)
                             binding.laporanPenyebab.setText(penyebab)
-
-//                            profileImageUri?.let {
-//                                Glide.with(requireContext())
-//                                    .load(profileImageUri)
-//                                    .placeholder(R.drawable.fotoprofil)
-//                                    .error(R.drawable.fotoprofil)
-//                                    .into(binding.imageViewProfile)
-//                            }
                         }
                     }
                 }

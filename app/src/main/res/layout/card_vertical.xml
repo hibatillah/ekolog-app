@@ -5,6 +5,7 @@
     android:id="@+id/card_parent"
     android:layout_width="200dp"
     android:layout_height="200dp"
+    android:layout_marginEnd="12dp"
     android:clickable="true"
     android:focusable="true"
     app:cardBackgroundColor="@color/foreground"

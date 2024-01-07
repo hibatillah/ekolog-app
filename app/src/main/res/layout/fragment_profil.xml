@@ -29,21 +29,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:layout_width="52dp"
-                android:layout_height="52dp"
-                android:padding="2dp"
-                android:layout_marginEnd="12dp"
-                android:background="@drawable/bg_tab_indicator"
-                android:src="@drawable/ic_launcher_foreground"
-                />
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/test_nama"
@@ -52,22 +44,15 @@
                     android:textStyle="bold"
                     />
 
-                <RelativeLayout
+                <TextView
+                    android:id="@+id/user_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingHorizontal="10dp"
-                    android:paddingVertical="2dp"
-                    android:layout_marginTop="2dp"
-                    android:background="@drawable/bg_tab_icon">
+                    android:text="@string/test_nama"
+                    android:textSize="16sp"
+                    android:textColor="@color/secondary5"
+                    />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/jumlah_laporan"
-                        android:textColor="@color/secondary3"
-                        android:fontFamily="sans-serif-medium"
-                        />
-                </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
         <!--    profile picture:end -->
@@ -78,38 +63,54 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/primary3"
-            android:text="@string/editProfil"
+            android:text="@string/detail_user"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:fontFamily="sans-serif-medium"
             android:letterSpacing="0.02"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             app:cornerRadius="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profile_picture"
             />
         <!--    edit btn:end -->
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_tab"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/edit_profil">
+
+            <ImageView
+                android:id="@+id/logout"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/ic_logout"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 <!--        header:end -->
 
 <!--    content:start -->
-    <ScrollView
+    <ListView
+        android:id="@+id/list_laporan_profil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="20dp"
-        android:paddingTop="24dp"
-        app:layout_constraintTop_toBottomOf="@+id/header">
+        android:paddingTop="20dp"
+        android:paddingBottom="200dp"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="8dp"
+        />
 
-        <ListView
-            android:id="@+id/list_laporan_profil"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="200dp"
-            android:divider="@android:color/transparent"
-            android:dividerHeight="8dp" />
-
-    </ScrollView>
     <!--    content:end -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

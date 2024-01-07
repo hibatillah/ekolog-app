@@ -6,8 +6,4 @@
     </style>
 
     <style name="Theme.EkologApp" parent="Base.Theme.EkologApp" />
-
-    <style name="ThemeOverlay.BottomNavView" parent="Widget.Material3.BottomNavigationView">
-        <item name="colorOnBackground">@color/primary3</item>
-    </style>
 </resources>
