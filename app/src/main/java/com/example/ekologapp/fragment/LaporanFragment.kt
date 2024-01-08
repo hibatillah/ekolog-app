@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentTransaction
+import com.bumptech.glide.Glide
 import com.example.ekologapp.R
 import com.example.ekologapp.databinding.FragmentLaporanBinding
 import com.google.firebase.database.DataSnapshot
@@ -15,10 +16,13 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 
 class LaporanFragment : Fragment() {
     private lateinit var binding: FragmentLaporanBinding
     private lateinit var ref: DatabaseReference
+    private lateinit var storageRef: StorageReference
     private var isFragmentAttached = false
 
     override fun onCreateView(
@@ -33,6 +37,7 @@ class LaporanFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         ref = FirebaseDatabase.getInstance().getReference("Laporan")
+        storageRef = FirebaseStorage.getInstance().reference
         val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
         val laporanId = getArguments()?.getString("id");
         isFragmentAttached = true

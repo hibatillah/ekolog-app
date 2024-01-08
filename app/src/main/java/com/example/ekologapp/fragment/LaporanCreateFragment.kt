@@ -11,12 +11,16 @@ import com.example.ekologapp.Laporan
 import com.example.ekologapp.R
 import com.example.ekologapp.databinding.FragmentLaporanCreateBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class LaporanCreateFragment: Fragment(), View.OnClickListener {
     lateinit var binding: FragmentLaporanCreateBinding
     private lateinit var ref: DatabaseReference
+    private var isFragmentAttached = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,6 +33,7 @@ class LaporanCreateFragment: Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        isFragmentAttached = true
         ref = FirebaseDatabase.getInstance().getReference("Laporan")
         binding.btnCreateLaporan.setOnClickListener(this)
     }
@@ -62,6 +67,27 @@ class LaporanCreateFragment: Fragment(), View.OnClickListener {
         user?.let {
             userId = user.uid
             userName = user.displayName.toString()
+        }
+
+        userId?.let {
+            ref.child(it).addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (isFragmentAttached) { // Pastikan fragment masih terpasang sebelum menggunakan konteks
+                        if (snapshot.exists()) {
+                            val id = snapshot.child("id").getValue(String::class.java)
+                            val username = snapshot.child("username").getValue(String::class.java)
+
+                            if (id != null && username != null) {
+                                userId = id
+                                userName = username
+                            }
+                        }
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                }
+            })
         }
 
         if (bencana.isEmpty() || tanggal.isEmpty() || lokasi.isEmpty() ||

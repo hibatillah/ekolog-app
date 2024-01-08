@@ -40,15 +40,15 @@
         <!--    back:end-->
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/delete_laporan"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@drawable/bg_tab"
             android:layout_marginEnd="12dp"
-            app:layout_constraintEnd_toStartOf="@+id/edit"
+            app:layout_constraintEnd_toStartOf="@+id/edit_laporan"
             app:layout_constraintBottom_toBottomOf="parent">
 
             <ImageView
-                android:id="@+id/delete_laporan"
                 android:layout_width="16dp"
                 android:layout_height="16dp"
                 android:background="@drawable/ic_delete"
@@ -60,7 +60,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/edit"
+            android:id="@+id/edit_laporan"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@drawable/bg_tab"
@@ -68,7 +68,6 @@
             app:layout_constraintBottom_toBottomOf="parent">
 
             <ImageView
-                android:id="@+id/edit_laporan"
                 android:layout_width="16dp"
                 android:layout_height="16dp"
                 android:background="@drawable/ic_create"
@@ -95,16 +94,6 @@
             android:paddingVertical="32dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/header">
-
-<!--            image:start -->
-            <ImageView
-                android:layout_width="358dp"
-                android:layout_height="148dp"
-                android:layout_marginEnd="12dp"
-                android:background="@drawable/bg_tab_indicator"
-                android:padding="2dp"
-                android:src="@drawable/ic_launcher_foreground" />
-<!--            image:end -->
 
 <!--            header:start -->
             <androidx.constraintlayout.widget.ConstraintLayout

@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentTransaction
 import com.example.ekologapp.Laporan
 import com.example.ekologapp.R
@@ -63,6 +65,7 @@ class HomeFragment: Fragment() {
                                     val author = view.findViewById<TextView>(R.id.card_author)
                                     val date = view.findViewById<TextView>(R.id.card_date)
                                     val content = view.findViewById<TextView>(R.id.card_content)
+                                    val parent = view.findViewById<CardView>(R.id.card_parent)
 
                                     title.setText(laporan.bencana)
                                     author.setText(laporan.userName)
@@ -70,6 +73,21 @@ class HomeFragment: Fragment() {
                                     content.setText(laporan.penyebab)
 
                                     linearLayout?.addView(view)
+
+                                    parent.setOnClickListener {
+                                        val bundle = Bundle()
+                                        bundle.putString("id", laporan.id)
+
+                                        val laporanFragment = LaporanFragment()
+                                        laporanFragment.arguments = bundle
+
+                                        val fragmentManager = (requireContext() as FragmentActivity).supportFragmentManager
+                                        val transaction: FragmentTransaction = fragmentManager.beginTransaction()
+
+                                        transaction.replace(R.id.container, laporanFragment)
+                                        transaction.addToBackStack(null)  // Untuk menambahkan ke tumpukan kembali
+                                        transaction.commit()
+                                    }
                                 }
                             }
                         }

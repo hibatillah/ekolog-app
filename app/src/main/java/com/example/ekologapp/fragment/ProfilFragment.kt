@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView.OnItemClickListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import com.bumptech.glide.Glide
 import com.example.ekologapp.Laporan
 import com.example.ekologapp.OnboardActivity
 import com.example.ekologapp.R
@@ -19,12 +20,15 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 
 
 class ProfilFragment : Fragment() {
     private lateinit var binding: FragmentProfilBinding
     private lateinit var laporanList: MutableList<Laporan>
     private lateinit var ref: DatabaseReference
+    private lateinit var storageRef: StorageReference
     private lateinit var firebaseAuth: FirebaseAuth
     private var isFragmentAttached = false
 
@@ -57,6 +61,7 @@ class ProfilFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        storageRef = FirebaseStorage.getInstance().reference
         isFragmentAttached = true
 
         getCurrentUser()
@@ -105,6 +110,7 @@ class ProfilFragment : Fragment() {
 
     private fun getCurrentUser() {
         val user = firebaseAuth.currentUser
+        val profileImageUri = user?.photoUrl
         val userId = user?.uid
 
         userId?.let {
@@ -117,6 +123,14 @@ class ProfilFragment : Fragment() {
 
                             binding.userName.setText(username)
                             binding.userEmail.setText(email)
+
+                            profileImageUri?.let {
+                                Glide.with(requireContext())
+                                    .load(profileImageUri)
+                                    .placeholder(R.drawable.ic_launcher_foreground)
+                                    .error(R.drawable.ic_launcher_background)
+                                    .into(binding.userImg)
+                            }
                         }
                     }
                 }
