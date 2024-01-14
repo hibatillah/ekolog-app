@@ -1,12 +1,15 @@
 package com.example.ekologapp.fragment
 
 import android.app.Activity.RESULT_OK
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.DatePicker
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -23,11 +26,13 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import java.util.Calendar
 
 class LaporanEditFragment: Fragment() {
     lateinit var binding: FragmentLaporanEditBinding
     private lateinit var ref: DatabaseReference
     private lateinit var storageRef: StorageReference
+    private lateinit var selectedDate: Calendar
     private var isFragmentAttached = false
 
     override fun onCreateView(
@@ -36,6 +41,13 @@ class LaporanEditFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentLaporanEditBinding.inflate(inflater, container, false)
+
+        selectedDate = Calendar.getInstance()
+
+        binding.editTanggalBencana.setOnClickListener {
+            showDatePickerDialog()
+        }
+
         return binding.root
     }
 
@@ -181,5 +193,31 @@ class LaporanEditFragment: Fragment() {
                 })
             }
         }
+    }
+
+    private fun showDatePickerDialog() {
+        val datePickerDialog = DatePickerDialog(
+            requireContext(),
+            { _: DatePicker?, year: Int, month: Int, dayOfMonth: Int ->
+                // Update tanggal yang dipilih
+                selectedDate.set(Calendar.YEAR, year)
+                selectedDate.set(Calendar.MONTH, month)
+                selectedDate.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+
+                // Tampilkan tanggal yang dipilih
+                val selectedDateString = "$dayOfMonth/${month + 1}/$year"
+                // Konversi String menjadi Editable
+                val editableDateString = Editable.Factory.getInstance().newEditable(selectedDateString)
+
+                // Set teks Editable ke EditText
+                binding.editTanggalBencana.text = editableDateString
+            },
+            selectedDate.get(Calendar.YEAR),
+            selectedDate.get(Calendar.MONTH),
+            selectedDate.get(Calendar.DAY_OF_MONTH)
+        )
+
+        // Tampilkan dialog
+        datePickerDialog.show()
     }
 }

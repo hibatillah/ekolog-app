@@ -63,6 +63,7 @@
     <string name="update_laporan">Update Laporan</string>
     <string name="detail_user">Detail User</string>
     <string name="detail_laporan">Detail Laporan</string>
+    <string name="pilih_tanggal">Pilih Tanggal Bencana</string>
 
     <!--    form laporan-->
     <string name="bencana">Bencana</string>
